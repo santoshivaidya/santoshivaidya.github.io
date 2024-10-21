@@ -2,25 +2,54 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #0e106e;
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 0;
-    text-align: left;
+    padding: 20px;
+    text-align: center;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
-nav li {
+nav ul li {
     display: inline;
     margin: 0 15px;
 }
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+.room {
+    margin: 20px 0;
+}
+
+.room img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 
 nav a {
     color: white;
