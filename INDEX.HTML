@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .product-section {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .buy-button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: left;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .close-button {
+      float: right;
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>E-Commerce Store</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="PRODUCTS.HTML">Products</a>
+      <a href="CART.HTML">Cart</a>
+      <a href="CONTACT.HTML">Contact Us</a>
+    </nav>
+  </header>
+
+  <section class="product-section">
+    <!-- 30 Static Product Cards -->
+    <div class="product">
+      <img src="1.jpeg" alt="China Company laptop">
+      <h3>China Company laptop</h3>
+      <p>Rs 60,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="2.jpeg" alt="USA Company laptop">
+      <h3>USA Company laptop</h3>
+      <p>Rs 80,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="3.jpeg" alt="India Company Laptop">
+      <h3>India Company Laptop</h3>
+      <p>Rs 70,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="4.jpeg" alt="India Phone">
+      <h3>India Phone</h3>
+      <p>Rs 9,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="5.jpeg" alt="Japan Phone">
+      <h3>Japan Phone</h3>
+      <p>Rs 16,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="6.jpeg" alt="Russia Phone">
+      <h3>Russia Phone</h3>
+      <p>Rs 24,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="7.jpeg" alt="Nokia">
+      <h3>Nokia</h3>
+      <p>Rs 3,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="8.jpeg" alt="White Washing Machine">
+      <h3>White Washing Machine</h3>
+      <p>Rs 10,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="9.jpeg" alt="Grey Washing Machine">
+      <h3>Grey Washing Machine</h3>
+      <p>Rs 20,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="10.jpeg" alt="Black Washing Machine">
+      <h3>Black Washing Machine</h3>
+      <p>Rs 30,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="11.jpeg" alt="Small Oven">
+      <h3>Small Oven</h3>
+      <p>Rs 3,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="12.jpeg" alt="Big Oven">
+      <h3>Big Oven</h3>
+      <p>Rs 6,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="13.jpeg" alt="LG TV">
+      <h3>LG TV</h3>
+      <p>Rs 10,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="14.jpeg" alt="LED TV">
+      <h3>LED TV</h3>
+      <p>Rs 20,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="15.jpeg" alt="Smart TV">
+      <h3>Smart TV</h3>
+      <p>Rs 30,000</p>
+      <button class="buy-button" onclick="openModal()">Buy Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+  </footer>
+
+  <!-- Shipping Form Modal -->
+  <div class="modal" id="shipping-modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3>Shipping Details</h3>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Shipping Address" rows="4" required></textarea>
+      <button onclick="confirmPurchase()">Confirm Purchase</button>
+    </div>
+  </div>
+
+  
+  <script>
+    // Open the modal
+    function openModal() {
+      document.getElementById('shipping-modal').style.display = 'flex';
+    }
+
+    // Close the modal
+    function closeModal() {
+      document.getElementById('shipping-modal').style.display = 'none';
+    }
+
+    // Confirm purchase
+    function confirmPurchase() {
+      alert('Thank you! Your order has been placed.');
+      closeModal();
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .product-details {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-details img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .add-to-cart {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .add-to-cart:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Product Details</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <div class="product-details">
+    <h2 id="product-title">Product Title</h2>
+    <img id="product-image" src="https://via.placeholder.com/500" alt="Product Image">
+    <p id="product-price">Price: $0.00</p>
+    <p id="product-description">Description of the product goes here.</p>
+    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 E-Commerce Store. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('product');
+
+    // Example product data (in a real application, this would be fetched from a database or API)
+    const products = [
+      { id: 1, title: 'Product 1', price: 29.99, description: 'Description for product 1', image: 'https://via.placeholder.com/500' },
+      { id: 2, title: 'Product 2', price: 39.99, description: 'Description for product 2', image: 'https://via.placeholder.com/500' },
+      { id: 3, title: 'Product 3', price: 49.99, description: 'Description for product 3', image: 'https://via.placeholder.com/500' },
+      { id: 4, title: 'Product 4', price: 59.99, description: 'Description for product 4', image: 'https://via.placeholder.com/500' },
+      { id: 5, title: 'Product 5', price: 69.99, description: 'Description for product 5', image: 'https://via.placeholder.com/500' },
+    ];
+
+    // Populate product details based on the selected product
+    const product = products.find(p => p.id == productId);
+    if (product) {
+      document.getElementById('product-title').innerText = product.title;
+      document.getElementById('product-price').innerText = `Price: Rs ${product.price}`;
+      document.getElementById('product-description').innerText = product.description;
+      document.getElementById('product-image').src = product.image;
+    } else {
+      document.querySelector('.product-details').innerHTML = '<p>Product not found.</p>';
+    }
+
+    // Cart array to store added products
+    let cart = [];
+
+    // Add to cart function
+    function addToCart() {
+      cart.push(product); // Add the product to the cart
+      alert(`${product.title} has been added to your cart!`);
+      console.log('Current Cart:', cart); // Log the cart to the console for verification
+    }
+  </script>
+
+</body>
+</html>
