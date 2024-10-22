@@ -72,3 +72,45 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Room list styling */
+.room-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.room {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 30%;
+}
+
+/* Booking form styling */
+.booking-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.booking-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.booking-form input, .booking-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.booking-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
